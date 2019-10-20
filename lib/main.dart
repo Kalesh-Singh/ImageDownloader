@@ -7,7 +7,8 @@ void main() {
         title: Text('Lets see images!'),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Text('+'),
+        // Can use any icon from https://material.io/tools/icons
+        child: Icon(Icons.add),
         onPressed: () {
           print('Hello!');
         },
@@ -17,3 +18,4 @@ void main() {
 
   runApp(app);
 }
+
