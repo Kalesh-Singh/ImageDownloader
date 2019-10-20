@@ -6,11 +6,14 @@ void main() {
       appBar: AppBar(
         title: Text('Lets see images!'),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Text('+'),
+        onPressed: () {
+          print('Hello!');
+        },
+      ),
     ),
   );
 
   runApp(app);
 }
-
-
-
