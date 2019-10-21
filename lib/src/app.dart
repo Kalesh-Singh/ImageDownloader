@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' show get;
 
 class App extends StatefulWidget {
   @override
@@ -9,6 +10,11 @@ class App extends StatefulWidget {
 
 class AppState extends State<App> {
   int counter = 0;
+
+  void fetchImage() {
+    counter += 1
+    get('https://jsonplaceholder.typicode.com/photos/1');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +27,7 @@ class AppState extends State<App> {
         floatingActionButton: FloatingActionButton(
           // Can use any icon from https://material.io/tools/icons
           child: Icon(Icons.add),
-          onPressed: () {
-            setState(() {
-              counter += 1;
-            });
-          },
+          onPressed: fetchImage,
         ),
       ),
     );
