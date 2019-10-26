@@ -9,21 +9,28 @@ class ImageList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: images.length,
-        itemBuilder: (context, int index) {
-          return buildImageContainer(images[index]);
-        },
+      itemCount: images.length,
+      itemBuilder: (context, int index) {
+        return buildImageContainer(images[index]);
+      },
     );
   }
 
   Widget buildImageContainer(ImageModel image) {
     return Container(
-      margin: EdgeInsets.all(19.0),
-      padding: EdgeInsets.all(19.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-      ),
-      child: Image.network(image.url),
-    );
+        margin: EdgeInsets.all(19.0),
+        padding: EdgeInsets.all(19.0),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+        ),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              child: Image.network(image.url),
+              padding: EdgeInsets.only(bottom: 8.0),
+            ),
+            Text(image.title),
+          ],
+        ));
   }
 }
